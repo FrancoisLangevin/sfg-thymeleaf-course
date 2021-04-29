@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * Created by jt on 1/20/16.
  */
@@ -28,7 +31,13 @@ public class IndexController {
     }
 
     @RequestMapping("secured")
-    public String secured(){
+    public String secured(Model model){
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+        Calendar cal = Calendar.getInstance();
+
+        model.addAttribute("today", dateFormat.format(cal.getTime()));
+
         return "secured";
     }
 }

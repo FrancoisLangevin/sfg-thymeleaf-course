@@ -142,10 +142,19 @@
         </div>
     </div>
 
+    
+    <p>
+        Today is: <span th:text="${today}">13 May 2011</span>
+    </p>
+
     <div class="row" sec:authorize="isAuthenticated()">
         <div class="col-md-10 col-md-offset-2">
             <h2 style="color:green">User is Logged In</h2>
             <p sec:authentication="principal.username">userName</p>
+            <th:block th:each="r, iter:${#authentication.getAuthorities()}">
+                <span th:text="${r}"></span>
+                <th:block th:if="${!iter.last}">, </th:block>
+            </th:block>
         </div>
     </div>
 
