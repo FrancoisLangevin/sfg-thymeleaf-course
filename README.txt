@@ -13,3 +13,6 @@ On peut avoir plusieurs fragments dans une meme page avec des noms different
 Fragment with iteration !!!!
 
 Faire des pages statics et par la suite remplacer par les tags remove vrai data etc..
+
+# Section 9
+Form and validation message with thymeleaf
